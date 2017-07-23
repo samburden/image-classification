@@ -1,4 +1,4 @@
-# Deep Learning Image Classification project
+# Deep Learning - Image Classification project
 
 This is a simple convolutional neural network (CNN) used for classifying images from the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset.
 

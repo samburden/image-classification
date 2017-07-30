@@ -7,6 +7,7 @@ This project is using Python 3 and needs the following libraries:
 * numpy
 * sklearn
 * tqdm
+* tensorflow
 * matplotlib
 * jupyter notebook
 
@@ -15,3 +16,6 @@ These can be installed using pip or conda if using [Anaconda](https://www.contin
 The project is implemented in a Jupyter notebook and can be run using the following from a terminal:
 
 ```jupyter notebook dlnd_image_classification.ipynb```
+
+<br/>
+If interested in training your model on a GPU for better performance, checkout <a href="http://www.floydhub.com">FloydHub</a>.

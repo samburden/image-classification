@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>dlnd_image_classification</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>dlnd_image_classification</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11789,10 +11762,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">urlretrieve</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="k">import</span> <span class="n">urlretrieve</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">isdir</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
 <span class="kn">import</span> <span class="nn">problem_unittests</span> <span class="k">as</span> <span class="nn">tests</span>
@@ -11839,9 +11809,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>All files found!
 </pre>
@@ -11901,9 +11869,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Stats of batch 2:
@@ -11919,9 +11885,7 @@ Label - Label Id: 6 Name: frog
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -12090,7 +12054,7 @@ height=250
 <span class="sd">    : x: List of image data.  The image shape is (32, 32, 3)</span>
 <span class="sd">    : return: Numpy array of normalize data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+    
     <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
     <span class="n">color_min</span> <span class="o">=</span> <span class="mi">0</span>
@@ -12098,9 +12062,6 @@ height=250
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span> <span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">color_min</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="n">color_max</span> <span class="o">-</span> <span class="n">color_min</span> <span class="p">)</span> <span class="p">)</span>
 
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_normalize</span><span class="p">(</span><span class="n">normalize</span><span class="p">)</span>
 </pre></div>
 
@@ -12112,9 +12073,7 @@ height=250
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12151,7 +12110,7 @@ height=250
 <span class="sd">    : x: List of sample Labels</span>
 <span class="sd">    : return: Numpy array of one-hot encoded labels</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="k">global</span> <span class="n">lb_encoding</span>
     <span class="k">if</span> <span class="n">lb_encoding</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">lb</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">LabelBinarizer</span><span class="p">()</span>
@@ -12160,9 +12119,6 @@ height=250
     <span class="k">return</span> <span class="n">lb_encoding</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_one_hot_encode</span><span class="p">(</span><span class="n">one_hot_encode</span><span class="p">)</span>
 </pre></div>
 
@@ -12174,9 +12130,7 @@ height=250
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12212,10 +12166,7 @@ height=250
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="c1"># Preprocess Training, Validation, and Testing Data</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preprocess Training, Validation, and Testing Data</span>
 <span class="n">helper</span><span class="o">.</span><span class="n">preprocess_and_save_data</span><span class="p">(</span><span class="n">cifar10_dataset_folder_path</span><span class="p">,</span> <span class="n">normalize</span><span class="p">,</span> <span class="n">one_hot_encode</span><span class="p">)</span>
 </pre></div>
 
@@ -12239,10 +12190,7 @@ height=250
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
 <span class="kn">import</span> <span class="nn">problem_unittests</span> <span class="k">as</span> <span class="nn">tests</span>
 <span class="kn">import</span> <span class="nn">helper</span>
 
@@ -12304,7 +12252,7 @@ height=250
 <span class="sd">    : image_shape: Shape of the images</span>
 <span class="sd">    : return: Tensor for image input.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 
 
@@ -12314,7 +12262,7 @@ height=250
 <span class="sd">    : n_classes: Number of classes</span>
 <span class="sd">    : return: Tensor for label input.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
 
 
@@ -12323,13 +12271,10 @@ height=250
 <span class="sd">    Return a Tensor for keep probability</span>
 <span class="sd">    : return: Tensor for keep probability.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;keep_prob&quot;</span><span class="p">)</span>
 
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">reset_default_graph</span><span class="p">()</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_nn_image_inputs</span><span class="p">(</span><span class="n">neural_net_image_input</span><span class="p">)</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_nn_label_inputs</span><span class="p">(</span><span class="n">neural_net_label_input</span><span class="p">)</span>
@@ -12344,9 +12289,7 @@ height=250
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Image Input Tests Passed.
 Label Input Tests Passed.
@@ -12399,7 +12342,7 @@ Keep Prob Tests Passed.
 <span class="sd">    :param pool_strides: Stride 2-D Tuple for pool</span>
 <span class="sd">    : return: A tensor that represents convolution and max pooling of x_tensor</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="c1"># Create weight and bias</span>
     <span class="n">color_channels</span> <span class="o">=</span> <span class="n">x_tensor</span><span class="o">.</span><span class="n">get_shape</span><span class="p">()</span><span class="o">.</span><span class="n">as_list</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span>
     <span class="n">weight</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal</span><span class="p">([</span><span class="n">conv_ksize</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">conv_ksize</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color_channels</span><span class="p">,</span> <span class="n">conv_num_outputs</span><span class="p">],</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.01</span><span class="p">))</span>
@@ -12422,10 +12365,6 @@ Keep Prob Tests Passed.
     
     <span class="k">return</span> <span class="n">conv_layer</span> 
 
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_con_pool</span><span class="p">(</span><span class="n">conv2d_maxpool</span><span class="p">)</span>
 </pre></div>
 
@@ -12437,9 +12376,7 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12471,16 +12408,12 @@ Keep Prob Tests Passed.
 <span class="sd">    : x_tensor: A tensor of size (Batch Size, ...), where ... are the image dimensions.</span>
 <span class="sd">    : return: A tensor of size (Batch Size, Flattened Image Size).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="n">shape</span> <span class="o">=</span> <span class="n">x_tensor</span><span class="o">.</span><span class="n">get_shape</span><span class="p">()</span><span class="o">.</span><span class="n">as_list</span><span class="p">()</span>
     <span class="c1"># Get all dimensions besides batch size and get product of those dimensions</span>
     <span class="n">dim_prod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dim_prod</span><span class="p">])</span>
 
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_flatten</span><span class="p">(</span><span class="n">flatten</span><span class="p">)</span>
 </pre></div>
 
@@ -12492,9 +12425,7 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12527,16 +12458,12 @@ Keep Prob Tests Passed.
 <span class="sd">    : num_outputs: The number of output that the new tensor should be.</span>
 <span class="sd">    : return: A 2-D tensor where the second dimension is num_outputs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="n">weight</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">random_normal</span><span class="p">([</span><span class="n">x_tensor</span><span class="o">.</span><span class="n">get_shape</span><span class="p">()</span><span class="o">.</span><span class="n">as_list</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="n">num_outputs</span><span class="p">],</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.01</span><span class="p">))</span>
     <span class="n">bias</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">random_normal</span><span class="p">([</span><span class="n">num_outputs</span><span class="p">]))</span>
     
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">weight</span><span class="p">),</span><span class="n">bias</span><span class="p">))</span>
 
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_fully_conn</span><span class="p">(</span><span class="n">fully_conn</span><span class="p">)</span>
 </pre></div>
 
@@ -12548,9 +12475,7 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12584,15 +12509,12 @@ Keep Prob Tests Passed.
 <span class="sd">    : num_outputs: The number of output that the new tensor should be.</span>
 <span class="sd">    : return: A 2-D tensor where the second dimension is num_outputs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="n">weight</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">random_normal</span><span class="p">([</span><span class="n">x_tensor</span><span class="o">.</span><span class="n">get_shape</span><span class="p">()</span><span class="o">.</span><span class="n">as_list</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="n">num_outputs</span><span class="p">],</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.01</span><span class="p">))</span>
     <span class="n">bias</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">random_normal</span><span class="p">([</span><span class="n">num_outputs</span><span class="p">]))</span>
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">weight</span><span class="p">),</span><span class="n">bias</span><span class="p">)</span>
 
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_output</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
 
@@ -12604,9 +12526,7 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12647,19 +12567,16 @@ Keep Prob Tests Passed.
 <span class="sd">    : keep_prob: Placeholder tensor that hold dropout keep probability.</span>
 <span class="sd">    : return: Tensor that represents logits</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Apply 1, 2, or 3 Convolution and Max Pool layers</span>
-    <span class="c1">#    Play around with different number of outputs, kernel size and stride</span>
-    <span class="c1"># Function Definition from Above:</span>
-    <span class="c1">#    conv2d_maxpool(x_tensor, conv_num_outputs, conv_ksize, conv_strides, pool_ksize, pool_strides)</span>
+
     <span class="n">conv_layer</span> <span class="o">=</span> <span class="n">conv2d_maxpool</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
     <span class="n">conv_layer</span> <span class="o">=</span> <span class="n">conv2d_maxpool</span><span class="p">(</span><span class="n">conv_layer</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 
-    <span class="c1"># TODO: Apply a Flatten Layer</span>
+    <span class="c1"># Apply a Flatten Layer</span>
     <span class="c1"># Function Definition from Above:</span>
     <span class="c1">#   flatten(x_tensor)</span>
     <span class="n">flat_x</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">conv_layer</span><span class="p">)</span>
 
-    <span class="c1"># TODO: Apply 1, 2, or 3 Fully Connected Layers</span>
+    <span class="c1"># Apply 1, 2, or 3 Fully Connected Layers</span>
     <span class="c1">#    Play around with different number of outputs</span>
     <span class="c1"># Function Definition from Above:</span>
     <span class="c1">#   fully_conn(x_tensor, num_outputs)</span>
@@ -12667,7 +12584,7 @@ Keep Prob Tests Passed.
     <span class="n">full_layer</span> <span class="o">=</span> <span class="n">fully_conn</span><span class="p">(</span><span class="n">full_layer</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
     <span class="n">full_layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">full_layer</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">)</span>
     
-    <span class="c1"># TODO: Apply an Output Layer</span>
+    <span class="c1"># Apply an Output Layer</span>
     <span class="c1">#    Set this to the number of classes</span>
     <span class="c1"># Function Definition from Above:</span>
     <span class="c1">#   output(x_tensor, num_outputs)</span>
@@ -12676,10 +12593,6 @@ Keep Prob Tests Passed.
     <span class="c1"># TODO: return output</span>
     <span class="k">return</span> <span class="n">output_layer</span>
 
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="c1">##############################</span>
 <span class="c1">## Build the Neural Network ##</span>
@@ -12718,9 +12631,7 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Neural Network Built!
 </pre>
@@ -12762,13 +12673,10 @@ Keep Prob Tests Passed.
 <span class="sd">    : feature_batch: Batch of Numpy image data</span>
 <span class="sd">    : label_batch: Batch of Numpy label data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">label_batch</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">:</span> <span class="n">keep_probability</span><span class="p">})</span>
 
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE</span>
-<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">tests</span><span class="o">.</span><span class="n">test_train_nn</span><span class="p">(</span><span class="n">train_neural_network</span><span class="p">)</span>
 </pre></div>
 
@@ -12780,9 +12688,7 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -12817,7 +12723,7 @@ Keep Prob Tests Passed.
 <span class="sd">    : cost: TensorFlow cost function</span>
 <span class="sd">    : accuracy: TensorFlow accuracy function</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
+
     <span class="k">global</span> <span class="n">valid_features</span>
     <span class="k">global</span> <span class="n">valid_labels</span>
     <span class="n">loss</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">label_batch</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">})</span>
@@ -12856,7 +12762,7 @@ Keep Prob Tests Passed.
 <div class="prompt input_prompt">In&nbsp;[143]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Tune Parameters</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tune Parameters</span>
 <span class="n">epochs</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
 <span class="n">keep_probability</span> <span class="o">=</span> <span class="mf">0.7</span>
@@ -12882,10 +12788,7 @@ Keep Prob Tests Passed.
 <div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Checking the Training on a Single Batch...&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Checking the Training on a Single Batch...&#39;</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
     <span class="c1"># Initializing the variables</span>
     <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
@@ -12907,9 +12810,7 @@ Keep Prob Tests Passed.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Checking the Training on a Single Batch...
 Epoch  1, CIFAR-10 Batch 1:  Loss:     2.1756 Validation Accuracy: 0.180000
@@ -12960,10 +12861,7 @@ Epoch 25, CIFAR-10 Batch 1:  Loss:     0.2683 Validation Accuracy: 0.550800
 <div class="prompt input_prompt">In&nbsp;[145]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">save_model_path</span> <span class="o">=</span> <span class="s1">&#39;./image_classification&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_model_path</span> <span class="o">=</span> <span class="s1">&#39;./image_classification&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training...&#39;</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
@@ -12993,9 +12891,7 @@ Epoch 25, CIFAR-10 Batch 1:  Loss:     0.2683 Validation Accuracy: 0.550800
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training...
 Epoch  1, CIFAR-10 Batch 1:  Loss:     2.2359 Validation Accuracy: 0.151000
@@ -13147,10 +13043,7 @@ Epoch 25, CIFAR-10 Batch 5:  Loss:     0.1486 Validation Accuracy: 0.626600
 <div class="prompt input_prompt">In&nbsp;[150]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">DON&#39;T MODIFY ANYTHING IN THIS CELL</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
@@ -13220,9 +13113,7 @@ Epoch 25, CIFAR-10 Batch 5:  Loss:     0.1486 Validation Accuracy: 0.626600
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>INFO:tensorflow:Restoring parameters from ./image_classification
 Testing Accuracy: 0.6223299050632911
@@ -13231,9 +13122,7 @@ Testing Accuracy: 0.6223299050632911
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -14033,8 +13922,4 @@ height=319
     </div>
   </div>
 </body>
-
- 
-
-
 </html>

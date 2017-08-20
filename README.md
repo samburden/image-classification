@@ -5,7 +5,7 @@ This is a simple convolutional neural network (CNN) used for classifying images 
 This project is using Python 3 and needs the following libraries:
 
 * numpy
-* sklearn
+* scikit-learn
 * tqdm
 * tensorflow
 * matplotlib
